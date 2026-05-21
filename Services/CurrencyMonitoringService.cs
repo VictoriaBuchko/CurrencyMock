@@ -64,7 +64,6 @@ namespace Currency.Services
                         "Валюта: {Code} | Поточний курс: {Rate} | Цільовий: {Target}",
                         alert.CurrencyCode, currentRate.Rate, alert.TargetRate);
 
-                    // Перевіряємо чи досяг курс цільового значення
                     if (currentRate.Rate >= alert.TargetRate)
                     {
                         var user = users.FirstOrDefault(u => u.Id == alert.UserId);
@@ -76,8 +75,7 @@ namespace Currency.Services
                             alert.CurrencyCode,
                             alert.TargetRate,
                             currentRate.Rate);
-
-                        // Деактивуємо налаштування після відправки
+                            
                         await userAlertRepository.DeactivateAlertAsync(alert.Id);
 
                         _logger.LogInformation(
