@@ -13,7 +13,6 @@ namespace Currency.Data
 
         public Task<IEnumerable<CurrencyRate>> GetAllRatesAsync()
         {
-            // Використовуємо Random для генерації "флуктуючих" курсів
             var rates = new List<CurrencyRate>
         {
             new CurrencyRate
