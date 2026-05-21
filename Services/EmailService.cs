@@ -17,7 +17,6 @@ namespace Currency.Services
 
         public Task SendCurrencyAlertAsync(string userEmail, string userName, string currencyCode, decimal targetRate, decimal currentRate)
         {
-            // Логуємо відправлені листи для тестування
             _logger.LogInformation(
                 "EMAIL відправлено на {Email} | Користувач: {Name} | Валюта: {Code} | Цільовий курс: {Target} | Поточний курс: {Current}",
                 userEmail, userName, currencyCode, targetRate, currentRate);
